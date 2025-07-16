@@ -2,7 +2,7 @@
     <div class="max-w-screen-xl mx-auto flex items-center justify-between px-8 py-3 rounded-full">
         <!-- Logo -->
         <div class="flex items-center space-x-3">
-            <img class="h-10 w-10" src="{{ asset('storage/banks/AH-2.png') }}" alt="Logo">
+            <img class="h-10 w-10" src="{{ asset('img/logomarketplacemsa.png') }}" alt="Logo">
             <span class="font-bold text-2xl tracking-wide text-gray-900">DARION</span>
         </div>
         <!-- Menu -->
