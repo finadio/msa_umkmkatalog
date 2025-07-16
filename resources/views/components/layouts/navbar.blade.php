@@ -2,8 +2,6 @@
     <div class="max-w-screen-xl mx-auto flex items-center justify-between px-8 py-2">
         <!-- Logo -->
         <div class="flex items-center space-x-3">
-            <img class="h-10 w-10" src="{{ asset('img/logomarketplacemsa.png') }}" alt="Logo">
-            <span class="font-bold text-2xl tracking-wide text-gray-900">DARION</span>
             <img class="h-12 w-auto rounded bg-white shadow" src="/img/msa.png" alt="UMKM MSA Logo">
             <span class="font-bold text-xl md:text-2xl tracking-wide text-blue-800">UMKM MSA</span>
         </div>
