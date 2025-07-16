@@ -12,17 +12,18 @@ class CategorySeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {
-        Category::create([
-            'name' => 'Sajadah',
-        ]);
-        
-        Category::create([
-            'name' => 'Gamis',
-        ]);
+{
+    // Kategori utama
+    $fashion = Category::create(['name' => 'Fashion & Aksesoris']);
+    $kerajinan = Category::create(['name' => 'Kerajinan Tangan']);
 
-        Category::create([
-            'name' => 'Celana',
-        ]);
+    // Subkategori dari Fashion
+    Category::create(['name' => 'Sajadah', 'parent_id' => $fashion->id]);
+    Category::create(['name' => 'Gamis', 'parent_id' => $fashion->id]);
+    Category::create(['name' => 'Celana', 'parent_id' => $fashion->id]);
+
+    // Subkategori dari Kerajinan (contoh saja)
+    Category::create(['name' => 'Anyaman', 'parent_id' => $kerajinan->id]);
+    Category::create(['name' => 'Souvenir', 'parent_id' => $kerajinan->id]);
     }
 }
