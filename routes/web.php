@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\DashboardPaymentsController;
 use App\Http\Controllers\DashboardProductsController;
 use App\Http\Controllers\DashboardShippedsController;
 use App\Http\Controllers\DashboardCategoriesController;
+use App\Http\Controllers\UmkmController;
 
 // Rute untuk pengunjung yang belum login
 Route::middleware('guest')->group(function () {
@@ -49,7 +51,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 // Rute untuk pengguna yang sudah login dengan akses admin
 Route::middleware(['auth', 'admin'])->group(function () {
     // Menampilkan dashboard admin
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Mengecek slug produk sebelum disimpan
     Route::get('/dashboard/products/checkSlug', [DashboardProductsController::class, 'checkSlug']);
@@ -109,3 +111,13 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/user/payment', [PaymentController::class, 'index']);
     Route::post('/user/payment', [PaymentController::class, 'order'])->name('user.payment');
 });
+
+Route::get('/umkm', [UmkmController::class, 'index'])->name('umkm.index');
+Route::get('/umkm/{kategori}', [UmkmController::class, 'kategori']);
+Route::get('/user/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::post('/logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('/login');
+})->name('logout');
