@@ -20,7 +20,7 @@
         <div class="max-w-screen-xl mx-auto flex items-center justify-between px-6 py-3">
             <!-- Logo -->
             <div class="flex items-center space-x-2">
-                <span class="font-bold text-2xl tracking-wide">DARION</span>
+                <span class="font-bold text-2xl tracking-wide">BPR MSA</span>
             </div>
             <!-- Menu -->
             <nav class="hidden md:flex space-x-8 text-base font-medium">

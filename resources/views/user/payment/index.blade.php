@@ -92,7 +92,7 @@
                                     Account Number: <br><strong>123456789</strong>
                                 </p>
                                 <p class="text-sm text-gray-600 dark:text-gray-400">
-                                    Account Name: <br><strong>Al Hakim Store</strong>
+                                    Account Name: <br><strong>nana nini Store</strong>
                                 </p>
                             </div>
                         </div>
